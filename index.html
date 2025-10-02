@@ -27,9 +27,19 @@
                               ※こちらの操作は上記の登録操作で上書きできます</p>
     
     <!--連絡方法-->
-    <p>何かあればこちらにご連絡ください<br>
-    Gmail: kirigamehaihu@gmail.com</p>
-    
+    <p>何かあればこちらにご連絡ください</p><br>
+    <p id="Gmail">kirigamehaihu@gmail.com</p>
+    <button id="copyBtn">コピー</button>
+    <script>
+        const btn = document.getElementById("copyBtn"); //idを取得
+
+        btn.addEventListener("click", () => {
+            const text = document.getElementById("Gmail").innerText; //ID:Gmailの中のテキストを取得
+            navigator.clipboard.writeText(text).then(() => {
+                alert("コピーしました:" + text);
+            });
+        });
+    </script>
     
 </body>
 </html>
